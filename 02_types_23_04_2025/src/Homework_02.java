@@ -1,10 +1,8 @@
 public class Homework_02 {
     public static void main(String[] args) {
-
         function6();
         function1();
         function2();
-
     }
 
     private static void function1() {
