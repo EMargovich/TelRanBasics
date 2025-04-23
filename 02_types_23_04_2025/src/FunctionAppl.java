@@ -11,5 +11,10 @@ public class FunctionAppl {
 
     private static void author() {
         System.out.println("Jack");
+        fn3();
+    }
+
+    private static void fn3() {
+        System.out.println("fn3");
     }
 }
