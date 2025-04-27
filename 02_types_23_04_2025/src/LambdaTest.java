@@ -28,8 +28,8 @@ public class LambdaTest {
         fPrint("Function2",LambdaTest::function4);
     }
 
-    private static void function3 () {
-    }
+    /* private static void function3 () {
+    }*/
 
     private static void function4 () {
         fPrint("Function4",LambdaTest::function5);
@@ -46,7 +46,7 @@ public class LambdaTest {
 }
 
 interface FunInter {
-    public void meth ();
+    void meth ();
 }
 
 

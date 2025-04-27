@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/02_types_23_04_2025/02_types_23_04_2025.iml" filepath="$PROJECT_DIR$/02_types_23_04_2025/02_types_23_04_2025.iml" />
+      <module fileurl="file://$PROJECT_DIR$/03_function_27_04_2025/03_function_27_04_2025.iml" filepath="$PROJECT_DIR$/03_function_27_04_2025/03_function_27_04_2025.iml" />
       <module fileurl="file://$PROJECT_DIR$/TelRanBasics.iml" filepath="$PROJECT_DIR$/TelRanBasics.iml" />
     </modules>
   </component>
