@@ -125,7 +125,7 @@ public class Homework_03 {
         return a > 0 ? a : -a;
     }
 
-    //The method give string with question and return string from console
+    //This method receives a string with the request text and returns the string entered through the console.
     private static String reader(String text) {
 
         String inf = null;
