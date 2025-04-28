@@ -65,9 +65,9 @@ public class Homework_03 {
             }
         } while (age == -1.0);
 
-        boolean credit = (!debt) & (income > 12000) & (age >= 21);
-
-        if (credit) System.out.println("Loan approved.");
+        //Check all conditions and print result
+        boolean loanApprove = (!debt) & (income > 12000) & (age >= 21);
+        if (loanApprove) System.out.println("Loan approved.");
         else System.out.println("Loan not approved.");
 
     }
