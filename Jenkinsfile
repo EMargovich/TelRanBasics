@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        jdk 'Java17' // Name from Global Tool Configuration
+        jdk 'Java' // Name from Global Tool Configuration
     }
     stages {
         stage('run backend') {
