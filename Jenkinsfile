@@ -8,6 +8,7 @@ pipeline {
     stage('run backend') {
         steps {
                 sh 'java -version'
+                java 02_types_23_04_2025/src/Homework_02.java
             }
         }  
     stage ("run frontend") {
