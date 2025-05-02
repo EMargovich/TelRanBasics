@@ -7,9 +7,10 @@ pipeline {
   stages {
     stage('run backend') {
         steps {
-                sh 'java -version'
+                sh '''
                 javac Bubble.java
                 java Bubble
+                '''
             }
         }  
     stage ("run frontend") {
