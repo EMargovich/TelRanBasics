@@ -1,5 +1,17 @@
 pipeline {
-  agent any
+    agent any
+    tools {
+        jdk 'Java17' // Name from Global Tool Configuration
+    }
+    stages {
+        stage('run backend') {
+            steps {
+                sh 'java -version'
+                // your Java build commands
+            }
+        }
+    }
+  
   stages {
     stage ("run frontend") {
       steps {
@@ -7,12 +19,6 @@ pipeline {
         nodejs('Node-23.11.0') {
           sh 'yarn install'
         }
-      }
-    }
-    stage ("run backeng") {
-      steps {
-        echo 'executing gradle...'
-    
       }
     }
        
