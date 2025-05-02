@@ -3,16 +3,13 @@ pipeline {
     tools {
         jdk 'Java' // Name from Global Tool Configuration
     }
-    stages {
-        stage('run backend') {
-            steps {
-                sh 'java -version'
-                // your Java build commands
-            }
-        }
-    }
-  
+   
   stages {
+    stage('run backend') {
+        steps {
+                sh 'java -version'
+            }
+        }  
     stage ("run frontend") {
       steps {
         echo 'executing yarn...'
