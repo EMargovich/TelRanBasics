@@ -130,7 +130,7 @@ public class Homework_03 {
 
         String inf = null;
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in, System.console().charset()));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println(text);
 
@@ -143,6 +143,5 @@ public class Homework_03 {
 
         return inf;
     }
-
 
 }
