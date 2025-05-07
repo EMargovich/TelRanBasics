@@ -1,8 +1,8 @@
 public class Homework_04 {
     public static void main(String[] args) {
         double a = 2;
-        double b = 0;
-        char c = '/';
+        double b = 2.1;
+        char c = '^';
 
         double res = calculator(a,b, c);
         System.out.println(a + " " + c + " " + b + " = " + res);
