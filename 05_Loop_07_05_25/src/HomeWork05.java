@@ -5,7 +5,7 @@ public class HomeWork05 {
         System.out.println("Count digits = " + res);
 
         luckyNumber(121212);
-        luckyNumber(1122335566);
+        luckyNumber(132231);
 
     }
 
@@ -15,9 +15,9 @@ public class HomeWork05 {
         boolean a=true;
         while(num != 0) {
             if(a) {
-                sum1 = num % 10;
+                sum1 += num % 10;
             } else {
-                sum2 = num % 10;
+                sum2 += num % 10;
             }
             a = !a;
 
@@ -30,12 +30,8 @@ public class HomeWork05 {
     }
 
     private static int countDigits(int num) {
-        int res;
-        for (res = 0; num != 0; num = num / 10) {
-            res++;
-        }
+        int res = 0;
+        for (;num != 0; res++, num = num / 10);
         return res;
     }
-
-
 }
