@@ -1,7 +1,7 @@
 public class HomeWork05 {
     public static void main(String[] args) {
 
-        int res = countDigits(9998);
+        int res = countDigits(0);
         System.out.println("Count digits = " + res);
 
         luckyNumber(121212);
@@ -12,6 +12,7 @@ public class HomeWork05 {
     private static void luckyNumber(int num) {
         int sum1 = 0, sum2 = 0;
         int n = num;
+
         boolean a=true;
         while(num != 0) {
             if(a) {
@@ -23,13 +24,13 @@ public class HomeWork05 {
 
             num /=10;
         }
-
         String st = (sum1 == sum2) ? "lucky" : "unlucky";
         System.out.println("Number " + n + " is " + st);
-
     }
 
     private static int countDigits(int num) {
+        if (num == 0) return 1;
+
         int res = 0;
         for (;num != 0; res++, num = num / 10);
         return res;
