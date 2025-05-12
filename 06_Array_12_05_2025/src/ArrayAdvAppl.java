@@ -7,10 +7,13 @@ public class ArrayAdvAppl {
 
         int res = sumArray(arr); //Return aum
         System.out.println("Sum = " + res);
+
         double avg = average(arr);
         System.out.printf("Avg = %.1f%n", avg);
+
         res = max(arr);
         System.out.println("Max  = " + res);
+
         res = search(arr, arr[7]); //Return index first item with value equal item[7]
         String message = res == -1 ? "Value not found" : ("Index = " + res);
         System.out.println(message);
@@ -25,21 +28,20 @@ public class ArrayAdvAppl {
     }
 
     private static int search(int[] arr, int searchVal) {
-        int index = -1;
 
         for (int j = 0; j < arr.length; j++) {
-            if (arr[j] == searchVal) index = j;
+            if (arr[j] == searchVal) return j;
         }
-
-        return index;
+        return -1;
     }
 
     private static double average(int[] arr) {
-        double average = 0;
-        for (int i = 0; i < arr.length ; i++) {
-            average += arr[i]*1./(arr.length*1.);
-        }
-        return average;
+//        double average = 0;
+//        for (int i = 0; i < arr.length ; i++) {
+//            average += arr[i]*1./(arr.length*1.);
+//        }
+//        return average;
+        return sumArray(arr)*1./arr.length;
     }
 
     private static int sumArray(int[] arr) {
