@@ -17,6 +17,17 @@ public class ArrayAdvAppl {
         res = search(arr, arr[7]); //Return index first item with value equal item[7]
         String message = res == -1 ? "Value not found" : ("Index = " + res);
         System.out.println(message);
+
+        reverseArray(arr);
+        printArray(arr);
+    }
+
+    public static void  reverseArray(int[] arr) {
+        for (int i = 0, j = arr.length-1, c; i <= j; i++, j-- ) {
+            c = arr[i];
+            arr[i] = arr[j];
+            arr[j] = c;
+        }
     }
 
     private static int max(int[] arr) {
