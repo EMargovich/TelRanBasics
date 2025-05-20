@@ -8,6 +8,25 @@ public class SelectSort {
         printArray(arr);
         selectSort(arr);
         printArray(arr);
+
+        System.out.println("Insert sort");
+        fillArray(arr, 10, 90);
+        printArray(arr);
+        insertSort(arr);
+        printArray(arr);
+
+    }
+
+    private static void insertSort(int[] arr) {
+        for (int i = 0; i < arr.length-1; i++) {
+            int j = i;
+            while((j >= 0) && (arr[j + 1] < arr[j])) {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+                j--;
+            }
+        }
     }
 
     private static void selectSort(int[] arr) {
