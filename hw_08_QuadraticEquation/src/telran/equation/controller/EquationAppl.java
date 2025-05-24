@@ -4,7 +4,7 @@ import telran.equation.model.QuadraticEquation;
 
 public class EquationAppl {
     public static void main(String[] args) {
-        QuadraticEquation eq = new QuadraticEquation(1, 5, -6);
+        QuadraticEquation eq = new QuadraticEquation(2, 5, 6);
         eq.display();
         System.out.println("Delta = " + eq.delta());
         System.out.println("Number of roots = " + eq.quantityRoots());

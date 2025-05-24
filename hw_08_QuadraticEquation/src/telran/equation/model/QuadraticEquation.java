@@ -84,8 +84,7 @@ public class QuadraticEquation {
             roots[0] = (-b + Math.sqrt(delta))/(2 * a);
             return roots;
         }
-        //roots = new double[1];
-        //roots[0] = Double.parseDouble(null);
-        return new double[]{0.};    }
+        roots = new double[0];
+        return roots;    }
 }
 
