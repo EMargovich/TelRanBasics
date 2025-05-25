@@ -14,6 +14,7 @@
       <module fileurl="file://$PROJECT_DIR$/TelRanBasics.iml" filepath="$PROJECT_DIR$/TelRanBasics.iml" />
       <module fileurl="file://$PROJECT_DIR$/hw_08_QuadraticEquation/hw_08_QuadraticEquation.iml" filepath="$PROJECT_DIR$/hw_08_QuadraticEquation/hw_08_QuadraticEquation.iml" />
       <module fileurl="file://$PROJECT_DIR$/hw_09_Books/hw_09_Books.iml" filepath="$PROJECT_DIR$/hw_09_Books/hw_09_Books.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hw_10_Inheritance/hw_10_Inheritance.iml" filepath="$PROJECT_DIR$/hw_10_Inheritance/hw_10_Inheritance.iml" />
     </modules>
   </component>
 </project>

@@ -22,6 +22,6 @@ public class Laptop extends Computer {
     @Override
     public void display() {
         super.display();
-        System.out.println(" Weight: " + weight + ", Hours: " + hours );
+        System.out.print(", Weight: " + weight + ", Hours: " + hours );
     }
 }

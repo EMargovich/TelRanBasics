@@ -12,4 +12,10 @@ public class Smartphone extends Laptop {
     public long getImei() {
         return imei;
     }
+
+    @Override
+    public void display() {
+        super.display();
+        System.out.println(", IMAI: " + imei);
+    }
 }

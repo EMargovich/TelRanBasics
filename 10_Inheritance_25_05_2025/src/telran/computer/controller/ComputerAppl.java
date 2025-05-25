@@ -12,8 +12,26 @@ public class ComputerAppl {
         Computer[] shop = new Computer[3];
         shop[0] = comp;
         shop[1] = laptop;
-        shop[2] = new Smartphone("Dr", 8 , 256, "Poco", 0.1, 18, 1234567890L);
-        showBrands(shop);
+        shop[2] = new Smartphone("Dragon", 8 , 256, "Poco", 0.1, 18, 1234567890L);
+ //       showBrands(shop);
+
+        Smartphone sm2 = (Smartphone) shop[2];
+//        System.out.println(sm2.getImei());
+
+//        shop[2].display();
+//        sm2.display();
+//
+//        if (shop[2] instanceof Smartphone) {
+//            shop[2].display();
+//        }
+
+        showComputers(shop);
+    }
+
+    private static void showComputers(Computer[] shop) {
+        for(Computer computer : shop) {
+            computer.display();
+        }
     }
 
     private static void showBrands(Computer[] shop) {
@@ -22,3 +40,6 @@ public class ComputerAppl {
         }
     }
 }
+
+//ДЗ Вывести данные о молочных продуктах, данные о мясных продуктов,
+//цены для кошерных продуктов, информацию о не еде
