@@ -12,7 +12,6 @@ public class ProductAppl {
         printPriceKosher(products);
 
         printPriceNotFood(products);
-
     }
 
     private static void printPriceNotFood(Product[] products) {
