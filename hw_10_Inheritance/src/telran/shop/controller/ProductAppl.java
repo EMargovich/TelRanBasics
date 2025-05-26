@@ -12,6 +12,8 @@ public class ProductAppl {
         printPriceKosher(products);
 
         printPriceNotFood(products);
+
+        printProductInformation(products);
     }
 
     private static void printPriceNotFood(Product[] products) {
@@ -40,7 +42,13 @@ public class ProductAppl {
         for (Product product : products) {
             System.out.printf("%-40s NIS %-30.2f%n",product.getName(), product.getPrice() );
         }
+    }
 
+    private static void printProductInformation(Product[] products) {
+        System.out.println("\nProduct information (not food)");
+        for (Product product : products) {
+            System.out.println(product.toString());
+        }
     }
 
     protected static Product[] createArr() {
