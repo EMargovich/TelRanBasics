@@ -54,9 +54,5 @@ public class LibraryAppl {
         System.out.println("Index of book \"The Hobbit\" " + lib.findIndexOfBookByTitle("The Hobbit"));
         System.out.println("Index of book \"To Kill a Mockingbird\" " + lib.findIndexOfBookByTitle("To Kill a Mockingbird"));
         System.out.println("Index of book \"To Kill a Mockingbird Again\" " + lib.findIndexOfBookByTitle("To Kill a Mockingbird Again"));
-
-
     }
-
-
 }

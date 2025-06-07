@@ -82,7 +82,7 @@ public class Library {
     // Реализуйте метод findIndexOfBookByTitle(String title) — он возвращает индекс книги по названию или -1, если не найдено.
     public int findIndexOfBookByTitle(String title) {
         for (int i = 0; i < size; i++) {
-            if (books[i].getTitle() == title ) {
+            if ( title.equals(books[i].getTitle()) ) {
                 return i;
             }
         }

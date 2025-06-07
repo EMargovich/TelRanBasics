@@ -12,10 +12,12 @@
       <module fileurl="file://$PROJECT_DIR$/09_Overloading/09_Overloading_21_05_2025.iml" filepath="$PROJECT_DIR$/09_Overloading/09_Overloading_21_05_2025.iml" />
       <module fileurl="file://$PROJECT_DIR$/10_Inheritance_25_05_2025/10_Inheritance_25_05_2025.iml" filepath="$PROJECT_DIR$/10_Inheritance_25_05_2025/10_Inheritance_25_05_2025.iml" />
       <module fileurl="file://$PROJECT_DIR$/11_Practice_28_05_2025/11_Practice_28_05_2025.iml" filepath="$PROJECT_DIR$/11_Practice_28_05_2025/11_Practice_28_05_2025.iml" />
+      <module fileurl="file://$PROJECT_DIR$/12_WrapperClass_04.06.2025/12_WrapperClass_04.06.2025.iml" filepath="$PROJECT_DIR$/12_WrapperClass_04.06.2025/12_WrapperClass_04.06.2025.iml" />
       <module fileurl="file://$PROJECT_DIR$/TelRanBasics.iml" filepath="$PROJECT_DIR$/TelRanBasics.iml" />
       <module fileurl="file://$PROJECT_DIR$/hw_08_QuadraticEquation/hw_08_QuadraticEquation.iml" filepath="$PROJECT_DIR$/hw_08_QuadraticEquation/hw_08_QuadraticEquation.iml" />
       <module fileurl="file://$PROJECT_DIR$/hw_09_Books/hw_09_Books.iml" filepath="$PROJECT_DIR$/hw_09_Books/hw_09_Books.iml" />
       <module fileurl="file://$PROJECT_DIR$/hw_10_Inheritance/hw_10_Inheritance.iml" filepath="$PROJECT_DIR$/hw_10_Inheritance/hw_10_Inheritance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hw_12_WrapperClass/hw_12_WrapperClass.iml" filepath="$PROJECT_DIR$/hw_12_WrapperClass/hw_12_WrapperClass.iml" />
     </modules>
   </component>
 </project>
