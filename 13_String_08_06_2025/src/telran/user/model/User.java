@@ -6,8 +6,7 @@ public class User {
     private String password;
 
     public User(String email, String password) {
-        //TO DO Set email
-        this.email = email;
+        setEmail(email);
         this.password = password;
     }
 
@@ -20,14 +19,7 @@ public class User {
             this.email = email;
         }
     }
-    //
-    /* TODO:
-    +1. @ exist and only one
-    2. dot after @
-    3. after last dot min 2 symbol
-    4. alphabetic, digits, _ , - , ., @
 
-     */
     private boolean validateEmail(String email) {
         //1. @ exist and only one
         int indexAt = email.indexOf("@");
