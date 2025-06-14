@@ -7,7 +7,7 @@ public class User {
 
     public User(String email, String password) {
         setEmail(email);
-        this.password = password;
+        setPassword(password);
     }
 
     public String getEmail() {
@@ -44,12 +44,9 @@ public class User {
         //4. alphabetic, digits, _ , - , ., @
         for (int i = 0; i < email.length(); i++) {
             char ch = email.charAt(i);
-            if( !(ch == 45 ||
-                    ch == 46 ||
-                    (ch >= 48 && ch <= 57) ||
+            if( !((ch >= 45 && ch <= 57 && ch!=47) ||
                     (ch >= 64 && ch <= 90) ||
-                    ch == 95 ||
-                    (ch >= 97 && ch <= 122))) {
+                    (ch >= 95 && ch <= 122 && ch != 96))) {
                 return false;
             }
         }
@@ -61,7 +58,107 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        if(validatePassword2(password)) {
+            this.password = password;
+        } else {
+            System.out.println("Password not valid!");
+        }
+    }
+    /*
+    1. minimum 8 symbols
+    2. minimum one digits
+    3. minimum one special symbol (!%@)
+    4. Lower case
+    5. Upper case
+     */
+
+
+    private boolean validatePassword2 (String password) {
+        boolean[] res = new boolean[5];
+        int len = password.length();
+        if(len >= 8) {
+            res[0] = true;
+        }
+
+        for (int i = 0; i < len; i++) {
+            char c = password.charAt(i);
+            if(Character.isDigit(c)){
+                res[1] = true;
+            }
+            if(isSpecSymbols(c)) {
+                res[2] = true;
+            }
+            if(Character.isUpperCase(c)){
+                res[3] = true;
+            }
+            if(Character.isLowerCase(c)){
+                res[4] = true;
+            }
+
+            if(res[0] && res[1] && res[2] && res[3] && res[4]) {
+                return true;
+            }
+        }
+
+
+
+        return false;
+    }
+
+    private boolean isSpecSymbols(char c) {
+        return "!%@*&".indexOf(c) >= 0;
+    }
+
+    private boolean validatePassword(String password) {
+        //1. minimum 8 symbols
+        if (password.length() < 8) {
+            return false;
+        }
+
+        //2. minimum one digits
+        boolean flag = false;
+        for (int i = 0; i < password.length(); i++) {
+            char ch = password.charAt(i);
+            if (Character.isDigit(ch)) {
+                flag = true;
+            }
+        }
+        if (!flag) return false;
+
+        //3. minimum one special symbol (!%@)
+        flag = false;
+        for (int i = 0; i < password.length(); i++) {
+            char ch = password.charAt(i);
+            if (ch == '@' || ch == '!' || ch == '%') {
+                flag = true;
+            }
+        }
+
+        if (!flag) return false;
+
+        //4. Lower case
+        flag = false;
+        for (int i = 0; i < password.length(); i++) {
+            char ch = password.charAt(i);
+            if (Character.isLowerCase(ch)) {
+                flag = true;
+            }
+        }
+        if (!flag) return false;
+
+        //5. Upper case
+        flag = false;
+
+        for (int i = 0; i < password.length(); i++) {
+            char ch = password.charAt(i);
+            if (Character.isUpperCase(ch)) {
+                flag = true;
+            }
+        }
+
+        if (!flag) return false;
+
+        return true;
     }
 
     @Override
