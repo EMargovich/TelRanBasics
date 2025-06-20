@@ -1,4 +1,4 @@
-package employee;
+package employee.model;
 
 public class Employee {
     private int id;
