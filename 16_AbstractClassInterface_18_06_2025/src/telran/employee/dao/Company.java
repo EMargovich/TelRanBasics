@@ -20,4 +20,8 @@ public interface Company {
 
     double totalSales();
 
+    Employee[] findEmployeesGreaterThan(int hours);
+
+    Employee[] findEmployeesSalaryBetween(double min, double max);
+
 }

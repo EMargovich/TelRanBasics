@@ -47,10 +47,10 @@ class CompanyTest {
     @Test
     void removeEmployee() {
         assertNull(company.removeEmployee(6000));
-        assertEquals(company.findEmployee(2000),firm[1]);
-        assertEquals(company.removeEmployee(2000),firm[1]);
+        assertEquals(firm[1], company.findEmployee(2000));
+        assertEquals(firm[1], company.removeEmployee(2000));
         assertNull(company.findEmployee(2000));
-        assertEquals(company.size(),3);
+        assertEquals(3, company.size());
     }
 
     @Test
@@ -62,34 +62,35 @@ class CompanyTest {
 
     @Test
     void totalSalary() {
-        assertEquals(company.totalSalary(),89080.0);
+        assertEquals(89080.0, company.totalSalary());
         company.removeEmployee(2000);
-        assertEquals(company.totalSalary(), 80080.0);
+        assertEquals(80080.0, company.totalSalary());
         Employee employee = new SalesManager(6000, "Jons", "Petrosian", 80, 200_000, 0.1);
         company.addEmployee(employee);
-        assertEquals(company.totalSalary(), 100080.0);
+        assertEquals(100080.0, company.totalSalary());
     }
 
     @Test
     void averageSalary() {
-        assertEquals(company.averageSalary(),(89080.0/4));
+        assertEquals((89080.0008/4), company.averageSalary(),0.01);
         company.removeEmployee(2000);
-        assertEquals(company.averageSalary(), 80080.0/3);
+        assertEquals(80080.0/3, company.averageSalary());
         Employee employee = new SalesManager(6000, "Jons", "Petrosian", 80, 200_000, 0.1);
         company.addEmployee(employee);
-        assertEquals(company.averageSalary(), 100080.0/4);
+        assertEquals(100080.0/4, company.averageSalary());
     }
 
     @Test
     void size() {
-        assertEquals(company.size(),4);
+        assertEquals(4, company.size());
     }
 
     @Test
     void printEmployees() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         PrintStream originalOut = System.out;
-        System.setOut(new PrintStream(outContent));
+        PrintStream ps = new PrintStream(outContent);
+        System.setOut(ps);
 
         company.printEmployees();
 
@@ -103,12 +104,31 @@ class CompanyTest {
     }
 
     @Test
+    void printEmployees2 () {
+        company.printEmployees();
+    }
+
+    @Test
     void totalSales() {
-        assertEquals(company.totalSales(),600_000.0);
+        assertEquals(600_000.0, company.totalSales());
         company.removeEmployee(3000);
-        assertEquals(company.totalSales(), 500_000.0);
+        assertEquals(500_000.0, company.totalSales());
         Employee employee = new SalesManager(6000, "Jons", "Petrosian", 80, 200_000, 0.1);
         company.addEmployee(employee);
-        assertEquals(company.totalSales(), 700_000);
+        assertEquals(700_000, company.totalSales());
+    }
+
+    @Test
+    void findEmployeesGreaterThan() {
+        Employee[] actual = company.findEmployeesGreaterThan(100);
+        Employee[] expected = {firm[0], firm[1], firm[2]};
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void findEmployeesSalaryBetween() {
+        Employee[] actual = company.findEmployeesSalaryBetween(5000,10_000);
+        Employee[] expected = {firm[1], firm[2]};
+        assertArrayEquals(expected, actual);
     }
 }
