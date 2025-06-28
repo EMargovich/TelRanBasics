@@ -2,6 +2,9 @@ package cars.dao;
 
 import cars.model.Car;
 
+import java.util.function.Predicate;
+import java.util.regex.Pattern;
+
 public interface Garage {
 
     boolean addCar(Car car);
@@ -10,13 +13,23 @@ public interface Garage {
 
     Car findCarByNumber(String regNumber);
 
-    Car[] findCarsByModel(String model);
+    default Car[] findCarsByModel(String model) {
+        return findCarsByPredicate((car) -> model.equals(car.getModel()));
+    }
 
-    Car[] findCarsByCompany(String company);
+    default Car[] findCarsByCompany(String company) {
+        return findCarsByPredicate((car) -> company.equals(car.getCompany()));
+    }
 
-    Car[] findCarsByEngine(double min, double max);
+    default Car[] findCarsByEngine(double min, double max) {
+        return findCarsByPredicate((car) -> car.getEngine() >= min && car.getEngine() < max);
+    }
 
-    Car[] findCarsByColor(String color);
+    default Car[] findCarsByColor(String color) {
+        return findCarsByPredicate((car) -> color.equals(car.getColor()));
+    }
 
     int size();
+
+    Car[] findCarsByPredicate(Predicate<Car> predicate);
 }

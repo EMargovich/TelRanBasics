@@ -33,7 +33,6 @@ class GarageTest {
 
     @Test
     void addCarTest() {
-
         Car car = null;
         assertFalse(garage.addCar(car));
         assertEquals(cars.length, garage.size());
@@ -53,7 +52,6 @@ class GarageTest {
 
     @Test
     void removeCarTest() {
-
         assertNull(garage.removeCar("REG13"));
         assertEquals(cars[6], garage.removeCar("REG7"));
         assertEquals(9,garage.size());

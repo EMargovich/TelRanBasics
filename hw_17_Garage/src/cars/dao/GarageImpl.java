@@ -10,7 +10,7 @@ public class GarageImpl implements Garage {
     private Car[] cars;
 
     public GarageImpl(int capacity) {
-        cars = new Car[capacity];
+        this.cars = new Car[capacity];
     }
 
     @Override
@@ -30,8 +30,8 @@ public class GarageImpl implements Garage {
         for (int i = 0; i < size; i++) {
             if(cars[i].getRegNumber() == regNumber) {
                 Car deleted = cars[i];
-                cars[i] = cars[size-1];
-                cars[--size] = null;
+                cars[i] = cars[--size];
+                cars[size] = null;
                 return deleted;
             }
         }
@@ -48,57 +48,32 @@ public class GarageImpl implements Garage {
         return null;
     }
 
-    @Override
-    public Car[] findCarsByModel(String model) {
-        Predicate<Car> predicate = new Predicate<Car>() {
-            @Override
-            public boolean test(Car car) {
-                return model.equals(car.getModel());
-            }
-        };
-        return findCarsByPredicate(predicate);
-    }
-
-    @Override
-    public Car[] findCarsByCompany(String company) {
-        Predicate<Car> predicate = new Predicate<Car>() {
-            @Override
-            public boolean test(Car car) {
-                return company.equals(car.getCompany());
-            }
-        };
-        return findCarsByPredicate(predicate);
-    }
-
-    @Override
-    public Car[] findCarsByEngine(double min, double max) {
-        Predicate<Car> predicate = new Predicate<Car>() {
-            @Override
-            public boolean test(Car car) {
-                return car.getEngine() >= min && car.getEngine() < max;
-            }
-        };
-        return findCarsByPredicate(predicate);
-    }
-
-    @Override
-    public Car[] findCarsByColor(String color) {
-        Predicate<Car> predicate = new Predicate<Car>() {
-            @Override
-            public boolean test(Car car) {
-                return color.equals(car.getColor());
-            }
-        };
-        return findCarsByPredicate(predicate);
-    //    return findCarsByPredicate(car -> color.equals(car.getColor()));
-    }
+//    @Override
+//    public Car[] findCarsByModel(String model) {
+//        return findCarsByPredicate((car) -> model.equals(car.getModel()));
+//    }
+//
+//    @Override
+//    public Car[] findCarsByCompany(String company) {
+//        return findCarsByPredicate((car) -> company.equals(car.getCompany()));
+//    }
+//
+//    @Override
+//    public Car[] findCarsByEngine(double min, double max) {
+//        return findCarsByPredicate((car) -> car.getEngine() >= min && car.getEngine() < max);
+//    }
+//
+//    @Override
+//    public Car[] findCarsByColor(String color) {
+//        return findCarsByPredicate((car) -> color.equals(car.getColor()));
+//    }
 
     @Override
     public int size() {
         return size;
     }
 
-    private Car[] findCarsByPredicate(Predicate<Car> predicate) {
+    public Car[] findCarsByPredicate(Predicate<Car> predicate) {
         int count=0;
         for (int i = 0; i < size; i++) {
             if(predicate.test(cars[i])) {
@@ -106,7 +81,7 @@ public class GarageImpl implements Garage {
             }
         }
         Car[] res = new Car[count];
-        for (int i = 0, k = 0; i < size; i++) {
+        for (int i = 0, k = 0; k < res.length; i++) {
             if(predicate.test(cars[i])) {
                 res[k++] = cars[i];
             }
