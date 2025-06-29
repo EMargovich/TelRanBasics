@@ -1,9 +1,11 @@
 package telran.oddEvenComparator.tests;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import telran.oddEvenComparator.tools.OddEvenComparator;
-
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import java.util.Arrays;
+
+
 
 public class TestOddEvenComparator {
 
@@ -14,6 +16,8 @@ public class TestOddEvenComparator {
         printArray(origin);
         OddEvenComparator comparator = new OddEvenComparator();
         Arrays.sort(origin,comparator);
+        Integer[] expected = {2,4,6,8,9,7,5,3,3,1};
+        assertArrayEquals(expected,origin);
         printArray(origin);
     }
 
