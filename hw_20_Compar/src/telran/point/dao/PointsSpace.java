@@ -20,8 +20,8 @@ public class PointsSpace {
 
 	public PointsSpace(Point relPoint, Point[] points) {
 		this.relPoint = relPoint;
-		Arrays.sort(points,comp);
-		this.points = points;
+		this.points = Arrays.copyOf(points, points.length);
+		Arrays.sort(this.points,comp);
 	}
 
 	public Point[] getPoints() {

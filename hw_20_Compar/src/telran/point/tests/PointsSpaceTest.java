@@ -24,7 +24,7 @@ class PointsSpaceTest {
 	void testConstructor() {
 		PointsSpace ps = new PointsSpace(p0, original);
 		assertArrayEquals(expected0, ps.getPoints());
-		new  PointsSpace(p4, original); //??ps=
+		ps = new  PointsSpace(p4, original); //??ps=
 		assertArrayEquals(expected4, ps.getPoints());
 	}
 	
