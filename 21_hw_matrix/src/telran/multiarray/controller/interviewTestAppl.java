@@ -1,7 +1,5 @@
 package telran.multiarray.controller;
 
-import java.util.Timer;
-
 public class interviewTestAppl {
     public static void main(String[] args) {
         int l = 10;
