@@ -3,6 +3,8 @@ package telran.album.dao;
 import telran.album.model.Photo;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.function.Predicate;
 
@@ -67,8 +69,7 @@ public class AlbumImpl implements Album {
         return getPhotoByPredicate(photo -> photo.getAlbumId() == albumId);
     }
 
-    @Override
-    public Photo[] getPhotoBetweenDate(LocalDate dateFrom, LocalDate dateTo) {
+    public Photo[] getPhotoBetweenDate2(LocalDate dateFrom, LocalDate dateTo) {
         return getPhotoByPredicate(photo -> {
             LocalDate photoDate = photo.getDate().toLocalDate();
             return !photoDate.isBefore(dateFrom) && !photoDate.isAfter(dateTo);
@@ -80,12 +81,34 @@ public class AlbumImpl implements Album {
     }
 
     @Override
+    public Photo[] getPhotoBetweenDate(LocalDate dateFrom, LocalDate dateTo) {
+
+        Photo pattern = new Photo(0,0, null, null, dateFrom.atStartOfDay() );
+
+        int from = Arrays.binarySearch(photos, 0, size, pattern);
+        while(from >= 0) {
+            from = Arrays.binarySearch(photos, 0, from,  pattern);
+        }
+        from = -from -1;
+
+        pattern = new Photo(0,0, null, null, LocalDateTime.of(dateTo, LocalTime.MAX));
+
+        int to = Arrays.binarySearch(photos, 0, size, pattern);
+        while(to >= 0) {
+            to = Arrays.binarySearch(photos, to + 1, size,  pattern);
+        }
+        to = -to -1;
+
+        return Arrays.copyOfRange(photos, from, to);
+    }
+
+    @Override
     public int size() {
         return size;
     }
 
     private Photo[] getPhotoByPredicate(Predicate<Photo> predicate) {
-        int count=0;
+        int count = 0;
         int j = 0;
 
         for (int i = 0; i < size; i++) {

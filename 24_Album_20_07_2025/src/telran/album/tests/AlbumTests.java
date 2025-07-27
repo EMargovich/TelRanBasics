@@ -85,11 +85,18 @@ public class AlbumTests {
         Arrays.sort(actuals, comp);
         Photo[] expecteds = {photos[1], photos[2], photos[5], photos[3], photos[4]};
         assertArrayEquals(expecteds, actuals);
+        assertArrayEquals(new Photo[0], collectionOfAlbums.getPhotoBetweenDate(ld.plusDays(100),ld.plusDays(101)));
     }
-
 
         @Test
     void size() {
         assertEquals(5,collectionOfAlbums.size());
     }
+
+    @Test
+    void testAdditional() {
+
+    }
+
+
 }
