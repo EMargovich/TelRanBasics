@@ -28,6 +28,7 @@
       <module fileurl="file://$PROJECT_DIR$/24_Album_20_07_2025/24_Album.iml" filepath="$PROJECT_DIR$/24_Album_20_07_2025/24_Album.iml" />
       <module fileurl="file://$PROJECT_DIR$/25_Posts_23_07_2025/25_Posts_23_07_2025.iml" filepath="$PROJECT_DIR$/25_Posts_23_07_2025/25_Posts_23_07_2025.iml" />
       <module fileurl="file://$PROJECT_DIR$/26_exception_27.07.2025/26_exception_27.07.2025.iml" filepath="$PROJECT_DIR$/26_exception_27.07.2025/26_exception_27.07.2025.iml" />
+      <module fileurl="file://$PROJECT_DIR$/27_Iterator/27_Iterator.iml" filepath="$PROJECT_DIR$/27_Iterator/27_Iterator.iml" />
       <module fileurl="file://$PROJECT_DIR$/TelRanBasics.iml" filepath="$PROJECT_DIR$/TelRanBasics.iml" />
       <module fileurl="file://$PROJECT_DIR$/hw_08_QuadraticEquation/hw_08_QuadraticEquation.iml" filepath="$PROJECT_DIR$/hw_08_QuadraticEquation/hw_08_QuadraticEquation.iml" />
       <module fileurl="file://$PROJECT_DIR$/hw_09_Books/hw_09_Books.iml" filepath="$PROJECT_DIR$/hw_09_Books/hw_09_Books.iml" />
@@ -42,6 +43,7 @@
       <module fileurl="file://$PROJECT_DIR$/hw_22_DateOperation/hw_22_DateOperation.iml" filepath="$PROJECT_DIR$/hw_22_DateOperation/hw_22_DateOperation.iml" />
       <module fileurl="file://$PROJECT_DIR$/hw_23_Calculator/hw_23_Calculator.iml" filepath="$PROJECT_DIR$/hw_23_Calculator/hw_23_Calculator.iml" />
       <module fileurl="file://$PROJECT_DIR$/hw_26_memory_service/hw_26_memory_service.iml" filepath="$PROJECT_DIR$/hw_26_memory_service/hw_26_memory_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hw_27_Fibonacci/hw_27_Fibonacci.iml" filepath="$PROJECT_DIR$/hw_27_Fibonacci/hw_27_Fibonacci.iml" />
     </modules>
   </component>
 </project>
