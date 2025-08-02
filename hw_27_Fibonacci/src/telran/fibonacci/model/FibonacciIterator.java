@@ -10,12 +10,12 @@ public class FibonacciIterator implements Iterator<Integer> {
     private int num2 = 1;
 
     public FibonacciIterator(int quantity) {
-        this.quantity = quantity;
+        this.quantity = quantity-1;
     }
 
     @Override
     public boolean hasNext() {
-        return ++index < quantity ? true : false;
+        return index < quantity ? true : false;
     }
 
     @Override
@@ -23,6 +23,7 @@ public class FibonacciIterator implements Iterator<Integer> {
         int sum = num1 + num2;
         num1 = num2;
         num2 = sum;
+        index++;
         return sum;
     }
 }
