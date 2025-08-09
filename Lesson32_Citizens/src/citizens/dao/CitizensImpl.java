@@ -87,13 +87,13 @@ public class CitizensImpl implements Citizens {
     @Override
     public Iterable<Person> find(int minAge, int maxAge) {
 
-        LocalDate startBerthDate = LocalDate.now().minusYears(maxAge);
-        Person pattern = new Person(Integer.MIN_VALUE,null,null, startBerthDate);
+        LocalDate startBirthDate = LocalDate.now().minusYears(maxAge);
+        Person pattern = new Person(Integer.MIN_VALUE,null,null, startBirthDate);
         int start = Collections.binarySearch(ageList,pattern, ageComparator);
         start = -start - 1;
 
-        LocalDate endBerthDate = LocalDate.now().minusYears(minAge);
-        pattern = new Person(Integer.MAX_VALUE,null,null, endBerthDate);
+        LocalDate endBirthDate = LocalDate.now().minusYears(minAge);
+        pattern = new Person(Integer.MAX_VALUE,null,null, endBirthDate);
         int end = Collections.binarySearch(ageList,pattern, ageComparator);
         end = -end - 1;
 
