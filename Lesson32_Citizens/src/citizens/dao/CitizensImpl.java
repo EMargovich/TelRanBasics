@@ -79,25 +79,35 @@ public class CitizensImpl implements Citizens {
     public Person find(int id) {
             Person pattern = new Person(id,null,null,null);
             int index = Collections.binarySearch(idList, pattern);
-            if(index >= 0)
-                return idList.get(index);
-            return null;
+//            if(index >= 0)
+//                return idList.get(index);
+//            return null;
+            return index < 0 ? null : idList.get(index);
     }
 
     @Override
     public Iterable<Person> find(int minAge, int maxAge) {
 
-        LocalDate startBirthDate = LocalDate.now().minusYears(maxAge);
-        Person pattern = new Person(Integer.MIN_VALUE,null,null, startBirthDate);
-        int start = Collections.binarySearch(ageList,pattern, ageComparator);
-        start = -start - 1;
+        List<Person> res = new ArrayList<>();
+        for (Person p : ageList) {
+            if (p.getAge() >= minAge && p.getAge() <= maxAge) {
+                res.add(p);
+            }
+        }
 
-        LocalDate endBirthDate = LocalDate.now().minusYears(minAge);
-        pattern = new Person(Integer.MAX_VALUE,null,null, endBirthDate);
-        int end = Collections.binarySearch(ageList,pattern, ageComparator);
-        end = -end - 1;
+        return res;
 
-        return ageList.subList(start, end);
+//        LocalDate startBirthDate = LocalDate.now().minusYears(maxAge);
+//        Person pattern = new Person(Integer.MIN_VALUE,null,null, startBirthDate);
+//        int start = Collections.binarySearch(ageList,pattern, ageComparator);
+//        start = -start - 1;
+//
+//        LocalDate endBirthDate = LocalDate.now().minusYears(minAge);
+//        pattern = new Person(Integer.MAX_VALUE,null,null, endBirthDate);
+//        int end = Collections.binarySearch(ageList,pattern, ageComparator);
+//        end = -end - 1;
+//        return ageList.subList(start, end);
+
     }
 
     @Override
