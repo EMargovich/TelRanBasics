@@ -20,12 +20,24 @@ public class CitizensImpl implements Citizens {
     static {
         lastNameComparator =
                 (p1, p2) -> {
-                    int res = p1.getLastName().compareTo(p2.getLastName());
+                    String ln1 = p1.getLastName();
+                    String ln2 = p2.getLastName();
+                    int res = ln1 == null && ln2 == null ? 0 : ln1 == null ? 1
+                            : ln2 == null? -1 : ln1.compareTo(ln2);
+                    //Old redaction
+//                    int res = p1.getLastName().compareTo(p2.getLastName());
                     return res != 0 ? res : Integer.compare(p1.getId(), p2.getId());
                 };
         ageComparator =
                 (p1, p2) -> {
-                    int res = Integer.compare(p1.getAge(), p2.getAge());
+                    Integer age1 = p1.getBirthDate() == null ? null : p1.getAge();
+                    Integer age2 = p2.getBirthDate() == null ? null : p2.getAge();
+
+                    int res = age1 == null && age2 == null ? 0 : age1 == null ? 1
+                            : age2 == null? -1 : age1.compareTo(age2);
+
+                    //Old redaction
+                    //int res = Integer.compare(p1.getAge(), p2.getAge());
                     return  res !=0 ? res : Integer.compare(p1.getId(), p2.getId());
                 };
     }

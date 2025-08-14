@@ -4,6 +4,7 @@ import citizens.dao.CitizensImpl;
 import citizens.entities.Person;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class CitizensAppl {
 
@@ -30,6 +31,8 @@ public class CitizensAppl {
         System.out.println(citizens.remove(444));
 
         printCollections(citizens, "After remove");
+
+
 
     }
 

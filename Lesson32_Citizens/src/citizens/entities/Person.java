@@ -9,12 +9,16 @@ public class Person implements Comparable<Person> {
     private int id;
     private String firstName;
     private String lastName;
-    LocalDate birthDate;
+    private LocalDate birthDate;
+    private LocalDate now = LocalDate.now();
+
 
     public Person(int id, String firstName, String lastName, LocalDate birthDate) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
+        if (birthDate == null && birthDate.isAfter(now))
+            throw new IllegalArgumentException();
         this.birthDate = birthDate;
     }
 
@@ -39,8 +43,9 @@ public class Person implements Comparable<Person> {
     }
 
     public int getAge() {
-       // return Period.between(LocalDate.now(), birthDate).getYears();
-        return (int) ChronoUnit.YEARS.between(LocalDate.now(), birthDate);
+       // return Period.between(birthDate, LocalDate.now()).getYears();
+        if (birthDate == null) return -1;
+        return (int) ChronoUnit.YEARS.between(birthDate, LocalDate.now());
     }
 
     public LocalDate getBirthDate() {
@@ -52,17 +57,6 @@ public class Person implements Comparable<Person> {
         return Integer.compare(id, o.getId());
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return id == person.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
-    }
 
     @Override
     public String toString() {
