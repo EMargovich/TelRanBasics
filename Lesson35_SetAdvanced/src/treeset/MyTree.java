@@ -1,6 +1,9 @@
 package treeset;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class MyTree {
+    public int count;
     //Inner private class. It is not use in another classes
     private static class Node {
         private int value;
@@ -16,24 +19,23 @@ public class MyTree {
 
     public MyTree subSet(int from, int to) {
         MyTree newTree = new MyTree();
-        root = subSetRecursive(root,newTree, from, to);
+        subSetRecursive(root,newTree, from, to);
         return newTree;
     }
 
-    private Node subSetRecursive(Node root, MyTree newTree, int from, int to) {
+    private void subSetRecursive(Node root, MyTree newTree, int from, int to) {
         if(root == null)
-            return null;
+            return;
         if(root.value < from)
-            root = subSetRecursive(root.right, newTree, from, to);
+            subSetRecursive(root.right, newTree, from, to);
         if(root.value >= from && root.value < to) {
             newTree.add(root.value);
             subSetRecursive(root.right, newTree, from, to);
             subSetRecursive(root.left, newTree, from, to);
         }
         if(root.value >= to) {
-            root = subSetRecursive(root.left, newTree, from, to);
+            subSetRecursive(root.left, newTree, from, to);
         }
-        return root;
     }
 
     public void trimMyTree(int start, int end) {
@@ -41,8 +43,12 @@ public class MyTree {
     }
 
     private Node trimMyTreeRecursive(Node root, int start, int end) {
-        if(root == null)
-            return null;
+        count++;
+        if(root == null) return null;
+
+        if(root.value <= start) root.left = null;
+
+        if(root.value > end) root.right = null;
 
         root.left = trimMyTreeRecursive(root.left,start,end);
         root.right = trimMyTreeRecursive(root.right,start,end);
@@ -52,7 +58,6 @@ public class MyTree {
         }
         return root;
     }
-
 
     public void add(int value) {
         root = addRecursive(root,value);

@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -6,24 +5,24 @@ public class AnagramAppl {
     public static void main(String[] args) {
         String word = "electricity";
 
-        //========True========
+        //==========True===========
         System.out.println("=========true===========");
         System.out.println(isAnagram(word, "electric"));
         System.out.println(isAnagram(word, "city"));
         System.out.println(isAnagram(word, "tric"));
         System.out.println(isAnagram(word, "critic"));
 
-        //=======False=============
+        //==========False==========
         System.out.println("==============false=============");
         System.out.println(isAnagram(word, "ellect"));
         System.out.println(isAnagram(word, "tot"));
         System.out.println(isAnagram(word, "select"));
         System.out.println(isAnagram(word, "teeet"));
         System.out.println(isAnagram(word, " tet"));
-
+        System.out.println(isAnagram("     ", " "));
     }
 
-    private static boolean isAnagram(String word, String testedWord) {
+    static boolean isAnagram(String word, String testedWord) {
         Map<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < word.length(); i++) {
             Character ch = word.charAt(i);
@@ -38,6 +37,4 @@ public class AnagramAppl {
         }
         return true;
     }
-
-
 }

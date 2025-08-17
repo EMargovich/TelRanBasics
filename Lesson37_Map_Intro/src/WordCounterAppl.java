@@ -5,9 +5,7 @@ import java.util.Map.*;
 public class WordCounterAppl {
     public static void main(String[] args) {
         String str = "sdsd, tyrh.... esdf jhgjghj erewf sdsd egdf yuiyuu tyrh tyrh";
-
         displayWordCount(str);
-
     }
 
     private static void displayWordCount(String str) {

@@ -22,20 +22,30 @@ public class MyTreeAppl {
         tree.add(6);
 
 //        tree.traverse();
-//
 //        System.out.println(tree.contains(4));
 //        System.out.println(tree.contains(3));
 
         tree.traverse();
 
-        int start = 3;
-        int end = 25;
+        int start = 15;
+        int end = 20;
 
-        MyTree newTree = new MyTree();
-        newTree = tree.subSet(start,end);
+        System.out.println("subSet test:");
+        System.out.println("Tree:");
+        tree.traverse();
+        MyTree newTree = tree.subSet(start,end);
+        System.out.println("NewTree:");
         newTree.traverse();
+        System.out.println("Again tree:");
+        tree.traverse();
 
+        System.out.println();
+        System.out.println("Check trim tree: \nTree");
+        tree.traverse();
+        System.out.println("Trim tree:");
         tree.trimMyTree(start,end);
         tree.traverse();
+
+        System.out.println("Count calls trimRecursive " + tree.count);
     }
 }
