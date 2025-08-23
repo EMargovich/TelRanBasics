@@ -19,11 +19,12 @@ public class MyTree {
 
     public MyTree subSet(int from, int to) {
         MyTree newTree = new MyTree();
-        subSetRecursive(root,newTree, from, to);
+        subSetRecursive2(root,newTree, from, to);
         return newTree;
     }
 
     private void subSetRecursive(Node root, MyTree newTree, int from, int to) {
+        count++;
         if(root == null)
             return;
         if(root.value < from)
@@ -38,12 +39,21 @@ public class MyTree {
         }
     }
 
+    private void subSetRecursive2(Node root, MyTree newTree, int from, int to) {
+        //count++;
+        if(root == null) return;
+        if(root.value > from)
+            subSetRecursive2(root.left, newTree, from, to);
+        if(root.value>=from && root.value < to) newTree.add(root.value);
+        if(root.value < to) subSetRecursive2(root.right, newTree, from, to);
+    }
+
     public void trimMyTree(int start, int end) {
-        root = trimMyTreeRecursive(root, start, end);
+        this.root = trimMyTreeRecursive(root, start, end);
     }
 
     private Node trimMyTreeRecursive(Node root, int start, int end) {
-        count++;
+        //count++;
         if(root == null) return null;
 
         if(root.value <= start) root.left = null;
@@ -56,6 +66,18 @@ public class MyTree {
         if(root.value < start || root.value >= end) {
             root = removeRecursive(root, root.value);
         }
+        return root;
+    }
+
+    private Node trimMyTreeRecursive2(Node root, int start, int end) {
+        if(root == null) return null;
+        if(root.value < start)
+            return trimMyTreeRecursive2(root.right, start, end);
+        if(root.value >= end)
+            return trimMyTreeRecursive2(root.left, start, end);
+        root.left = trimMyTreeRecursive2(root.left, start, end);
+        root.right = trimMyTreeRecursive2(root.right, start, end);
+
         return root;
     }
 

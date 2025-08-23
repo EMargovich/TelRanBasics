@@ -27,8 +27,8 @@ public class MyTreeAppl {
 
         tree.traverse();
 
-        int start = 15;
-        int end = 20;
+        int start = 10;
+        int end = 14;
 
         System.out.println("subSet test:");
         System.out.println("Tree:");
@@ -46,6 +46,6 @@ public class MyTreeAppl {
         tree.trimMyTree(start,end);
         tree.traverse();
 
-        System.out.println("Count calls trimRecursive " + tree.count);
+       // System.out.println("Count calls trimRecursive " + tree.count);
     }
 }

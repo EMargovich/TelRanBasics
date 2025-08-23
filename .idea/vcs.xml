@@ -3,6 +3,9 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Lesson31_Practice" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Lesson31_Practice - Copy/Lesson39_Practice2" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Lesson31_Practice/Lesson31_Project" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Lesson40_References_Optional_StreamIntro" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Lesson42_Stream" vcs="Git" />
   </component>
 </project>
