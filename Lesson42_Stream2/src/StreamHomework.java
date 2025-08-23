@@ -8,10 +8,10 @@ public class StreamHomework {
     public static void main(String[] args) {
 
         //==============================1===========================
-        List<String> names = Arrays.asList(" alice ", "BOB", null, " Eve ");
+        List<String> names = Arrays.asList(" alice ", "BOB", null, " Eve ", "");
 
         names = names.stream()
-                .filter(Objects::nonNull)
+                .filter(s -> s != null && s != "")
                 .map(String::trim)
                 .map(s -> s.substring(0,1).toUpperCase()
                         +s.substring(1,s.length()).toLowerCase())
